@@ -1,5 +1,5 @@
 import json
-from flask import Flask, jsonify
+from flask import Flask
 from flask_restful import Resource, Api, reqparse
 from dataExtractor import returnAllStats
 app = Flask(__name__)

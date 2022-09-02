@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 
 creds.py
+*.cache
