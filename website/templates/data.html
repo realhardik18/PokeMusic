@@ -42,7 +42,7 @@
             </div>
         </div>
     </nav>
-    <h1 class="welcome-text">Here are the songs!</h1>
+    <h1 class="welcome-text">Here is the chosen Pokemon!</h1>
     <div class="card mb-3" style="margin: 20px;">
         <div class="row g-0">
             <div class="col-md-1">
@@ -58,6 +58,7 @@
         </div>
     </div>
     <hr>
+    <h1 class="welcome-text">And here are the song it <strong>would</strong> listen to!</h1>
     {% for track in data %}
     <div class="card" style="margin-left: 40px;margin-right:40px;margin-top:10px;margin-bottom:30px;">
         <div class="card-body">
@@ -75,7 +76,7 @@
             </p>
         </div>
         <div class="card-footer text-black">
-            <strong>Popularity Score: {{track['popularity']}}</strong>
+            <strong>Sno:{{track['sno']}} || Popularity Score: {{track['popularity']}}</strong>
         </div>
     </div>
     {% endfor %}
