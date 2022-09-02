@@ -20,7 +20,7 @@ def returnAllStats(id):
     data['GIF'] = getGIFOfPokemonFromID(id)
     stats = getPokemonData(id).values
     for stat in stats:
-        data[PossibleStats[int(list(stat)[1]-1)]] = list(stat)[-1]
+        data[PossibleStats[int(list(stat)[1]-1)]] = str(list(stat)[-1])
     return data
 
 
@@ -33,7 +33,7 @@ def getGIFOfPokemonFromID(id):
     return f'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/{id}.gif'
 
 
-print(returnAllStats(90))
+#print(returnAllStats(90))
 # print(getNameOfPokemonFromID(10))
 
 
