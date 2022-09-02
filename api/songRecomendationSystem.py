@@ -1,4 +1,5 @@
 from pydoc import cli
+from turtle import speed
 from creds import CLIENT_ID, CLIENT_SECRET
 import spotipy as sp
 from dataExtractor import returnAllStats
@@ -18,14 +19,14 @@ def defineLiveness(id):
         return round(target_liveness, 2)
 
 
-def defineTempo(id):
+def defineDanceability(id):
     speed = int(returnAllStats(id=id)['Speed'])
     if speed >= 132:
-        target_tempo = 0.99
-        return target_tempo
+        target_danceability = 0.99
+        return target_danceability
     else:
-        target_tempo = speed/132
-        return round(target_tempo, 2)
+        target_danceability = speed/132
+        return round(target_danceability, 2)
 
 
 def defineEnergy(id):
@@ -38,14 +39,20 @@ def defineEnergy(id):
         return round(target_energy, 2)
 
 
-def returnSongs(id):
+def returnSongIDS(id):
     # reference https://developer.spotify.com/documentation/web-api/reference/#/operations/get-recommendations
     generes = ["rock", "chill", 'classical', 'edm']
-
-    recomendations = client.recommendations(seed_genres=generes, limit=10)
-    return recomendations['tracks'][0]
+    liveness = defineLiveness(id)
+    danceability = defineDanceability(id)
+    energy = defineEnergy(id)
+    recomendations = client.recommendations(
+        seed_genres=generes, target_energy=energy, target_liveness=liveness, target_danceability=danceability, limit=10)
+    song_ids = list()
+    for song in recomendations['tracks']:
+        song_ids.append(song['id'])
+    return song_ids
 
     # work on bugs
     # possiblly enter value as a list and try]
     # work on calcultation for other variables
-print(defineEnergy(200))
+# print(returnSongIDS(25))

@@ -33,7 +33,7 @@ def getGIFOfPokemonFromID(id):
     return f'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/{id}.gif'
 
 
-print(returnAllStats(90))
+# print(returnAllStats(90))
 # print(getNameOfPokemonFromID(10))
 
 
