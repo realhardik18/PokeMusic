@@ -1,6 +1,7 @@
 from creds import CLIENT_ID, CLIENT_SECRET
 import spotipy as sp
 from dataExtractor import returnAllStats
+from infoForTrack import returnSongData
 
 creds = sp.oauth2.SpotifyClientCredentials(
     client_id=CLIENT_ID, client_secret=CLIENT_SECRET)
@@ -45,10 +46,10 @@ def returnSongIDS(id):
     energy = defineEnergy(id)
     recomendations = client.recommendations(
         seed_genres=generes, target_energy=energy, target_liveness=liveness, target_danceability=danceability, limit=10)
-    song_ids = list()
+    song_data = list()
     for song in recomendations['tracks']:
-        song_ids.append(song['id'])
-    return song_ids
+        song_data.append(returnSongData(song['id']))
+    return song_data
 
     # work on bugs
     # possiblly enter value as a list and try]

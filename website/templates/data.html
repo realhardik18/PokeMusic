@@ -42,7 +42,43 @@
             </div>
         </div>
     </nav>
-    <h1>data</h1>
+    <h1 class="welcome-text">Here are the songs!</h1>
+    <div class="card mb-3" style="margin: 20px;">
+        <div class="row g-0">
+            <div class="col-md-1">
+                <img src="{{gif}}" class="gif" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{name}}</h5>
+                    <p class="card-text">here are some stats: <br>HP:{{hp}} || Attack: {{att}} || Defense:{{deff}} ||
+                        Special Attack:{{spatt}} || Special Defense:{{spdef}} || Speed:{{speed}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    {% for track in data %}
+    <div class="card" style="margin-left: 40px;margin-right:40px;margin-top:10px;margin-bottom:30px;">
+        <div class="card-body">
+            <table style="width: 100%;">
+                <tr>
+                    <th>
+                        <h2>{{track['name_of_track']}} by {{track['name_of_artist']}}</h2>
+                    </th>
+                <tr>
+                    <td style="margin-top: 10px;"><iframe style="border-radius:12px" src="{{track['embed_url']}}"
+                            width="100%" height="80" frameBorder="0" allowfullscreen=""
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                </tr>
+            </table>
+            </p>
+        </div>
+        <div class="card-footer text-black">
+            <strong>Popularity Score: {{track['popularity']}}</strong>
+        </div>
+    </div>
+    {% endfor %}
 </body>
 
 </html>

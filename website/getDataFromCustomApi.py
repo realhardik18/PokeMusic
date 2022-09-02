@@ -14,4 +14,4 @@ def getPokemonData(pokemon_id):
     return response.json()
 
 
-# print(getPokemonData(pokemon_id=1))
+print(getPokemonData(pokemon_id=1))
