@@ -27,4 +27,3 @@ class PokemonSongsRecomendationAPI(Resource):
 
 api.add_resource(PokemonDataAPI, '/data', endpoint='pokemon')
 api.add_resource(PokemonSongsRecomendationAPI, '/songs', endpoint='songs')
-app.run(debug=True)

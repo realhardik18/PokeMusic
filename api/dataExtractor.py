@@ -5,7 +5,7 @@ import requests
 
 
 def getPokemonData(id):
-    df = pd.read_csv('api\data\pokemon_stats.csv')
+    df = pd.read_csv('data\pokemon_stats.csv')
     df = df.drop(axis=1, labels='effort')
     return df.loc[df['pokemon_id'] == int(id)]
     # return df.head()
