@@ -1,5 +1,3 @@
-from pydoc import cli
-from turtle import speed
 from creds import CLIENT_ID, CLIENT_SECRET
 import spotipy as sp
 from dataExtractor import returnAllStats
