@@ -20,3 +20,6 @@ you can run the flask site locally on your pc! follow these instructions to do i
 
 # category
 senior(i've been coding for almost 2 years now!)
+
+# update
+pokemusic won the grand prize 🥳🥳🥳
